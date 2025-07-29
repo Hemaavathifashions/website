@@ -37,7 +37,6 @@ header {
   height: 340px;
   object-fit: contain;
   border-radius: 50%;
-  /* If your logo isn't already circular, this helps */
 }
 
 .tagline {
