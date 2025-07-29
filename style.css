@@ -8,14 +8,36 @@ body {
 
 header {
   background: #f7e9e3;
-  padding: 20px 0 10px 0;
+  padding: 40px 0 30px 0;
   text-align: center;
+  position: relative;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.logo-circle {
+  width: 384px;
+  height: 384px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
 }
 
 .logo {
-  height: 80px;
-  display: block;
-  margin: 0 auto 10px auto;
+  width: 340px;
+  height: 340px;
+  object-fit: contain;
+  border-radius: 50%;
+  /* If your logo isn't already circular, this helps */
 }
 
 .tagline {
@@ -25,17 +47,32 @@ header {
 }
 
 nav {
-  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0 0 0;
+  gap: 24px;
 }
+
 nav a {
-  margin: 0 12px;
+  display: inline-block;
+  padding: 12px 28px;
+  margin: 0 6px;
   color: #54433a;
-  text-decoration: none;
+  background: #fff;
+  border-radius: 30px;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.12em;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(185,132,111,0.07);
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  border: 2px solid transparent;
 }
-nav a:hover {
-  color: #b9846f;
+
+nav a:hover, nav a:focus {
+  background: #b9846f;
+  color: #fff;
+  border-color: #b9846f;
+  box-shadow: 0 4px 16px rgba(185,132,111,0.15);
 }
 
 main {
@@ -50,9 +87,42 @@ main {
   text-align: center;
 }
 
-.highlights ul {
-  list-style-type: disc;
-  padding-left: 20px;
+.highlights h3 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.categories-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.categories-list li {
+  width: 270px;
+  background: #fff;
+  color: #54433a;
+  border-radius: 30px;
+  margin: 0;
+  padding: 16px 0;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(185,132,111,0.07);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  border: 2px solid transparent;
+}
+
+.categories-list li:hover, .categories-list li:focus {
+  background: #b9846f;
+  color: #fff;
+  border-color: #b9846f;
+  box-shadow: 0 4px 16px rgba(185,132,111,0.15);
 }
 
 footer {
@@ -61,4 +131,20 @@ footer {
   padding: 18px 10px;
   font-size: 0.95em;
   color: #6b5a4e;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+  .logo-circle {
+    width: 200px;
+    height: 200px;
+  }
+  .logo {
+    width: 170px;
+    height: 170px;
+  }
+  .categories-list li {
+    width: 90vw;
+    font-size: 1em;
+  }
 }
